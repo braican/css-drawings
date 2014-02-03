@@ -1,0 +1,113 @@
+
+#bitbucket{
+    background: #205081;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+#bitbucket > div{
+    position: absolute;
+}
+
+.bucket{
+    height: 0;
+    width: 180px;
+    
+    left: 50%;
+    top: 80px;
+    margin-left: -130px;
+
+    border-top: 280px solid white;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+
+    -webkit-border-radius: 0 0 125px 125px;
+    -moz-border-radius: 0 0 125px 125px;
+    border-radius: 0 0 125px 125px;
+}
+
+.bucket-top{
+    background: #fff;
+
+    width: 260px;
+    height: 80px;
+
+    left: 50%;
+    top: 40px;
+    
+    margin-left: -130px;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.bucket-opening{
+    background: #205081;
+
+    width: 180px;
+    height: 40px;
+
+    top: 60px;
+    left: 50%;
+    margin-left: -90px;
+
+    -webkit-border-radius:50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.circle{
+    width: 90px;
+    height: 90px;
+
+    background: #205081;
+
+    left: 50%;
+    top: 150px;
+
+    margin-left: -45px;
+
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+}
+.inner-circle{
+    width: 50px;
+    height: 50px;
+
+    background: #fff;
+
+    left: 50%;
+    top: 170px;
+
+    margin-left: -25px;
+
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+}
+
+.handle{
+    border: 15px solid #205081;
+
+    background: transparent;
+
+    width: 380px;
+    height: 380px;
+
+    left: 50%;
+    top: -80px;
+    margin-left: -190px;
+
+    -webkit-border-radius: 400px;
+    -moz-border-radius: 400px;
+    border-radius: 400px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
