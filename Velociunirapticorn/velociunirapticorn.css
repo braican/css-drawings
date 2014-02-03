@@ -1,0 +1,92 @@
+
+#velociunirapticorn{
+    position: relative;
+}
+#velociunirapticorn div{
+    position: absolute;
+}
+
+/* HEAD */
+.head{
+    left: 40px;
+    top: 40px;
+}
+.snout{
+    background: transparent;
+    
+    width: 0;
+    height: 22px;
+
+    top: 8px;
+
+    border-right: 150px solid black;
+    border-bottom: 30px solid transparent;
+
+    -webkit-transform: skew(-40deg, 0);
+    -moz-transform: skew(-40deg, 0);
+    -ms-transform: skew(-40deg, 0);
+    -o-transform: skew(-40deg, 0);
+    transform: skew(-40deg, 0);
+
+    -webkit-border-radius: 10px 0 0 40px;
+    -moz-border-radius: 10px 0 0 40px;
+    border-radius: 10px 0 0 40px;
+}
+
+.head-crest{
+    background: #000;
+    width: 70px;
+    height: 70px;
+
+    left: 115px;
+    top: 0;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.jaw{
+    background: #000;
+    width: 108px;
+    height: 101px;
+
+    left: 90px;
+    top: 12px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.inner-jaw{
+    background: #fff;
+    width: 80px;
+    height: 54px;
+
+    left: 40px;
+    top: 50px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.lower-jaw{
+    background: transparent;
+    
+    width: 0;
+    height: 11px;
+
+    top: 97px;
+    left: 23px;
+
+    border-right: 120px solid black;
+    border-top: 20px solid transparent;
+
+    -webkit-transform: rotate(-13deg) skew(34deg);
+    -moz-transform: rotate(-13deg) skew(34deg);
+    -ms-transform: rotate(-13deg) skew(34deg);
+    -o-transform: rotate(-13deg) skew(34deg);
+    transform: rotate(-13deg) skew(34deg);
+}
