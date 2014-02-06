@@ -521,11 +521,11 @@
 
 .rump{
     background: #000;
-    width: 210px;
-    height: 105px;
+    width: 220px;
+    height: 85px;
     
-    top: 279px;
-    left: 522px;
+    top: 280px;
+    left: 526px;
 
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -550,7 +550,7 @@
 /* TAIL */
 .tail{
     width: 600px;
-    height: 600px;
+    height: 630px;
 
     left: 630px;
     top: -180px;
@@ -558,11 +558,11 @@
 }
 .tail .top{
     background: #fff;
-    width: 1460px;
+    width: 1478px;
     height: 1460px;
     
-    left:-714px;
-    top: -998px;
+    left:-731px;
+    top: -1000px;
 
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -598,11 +598,11 @@
 
 .tail .bottom{
     background: #fff;
-    width: 540px;
-    height: 200px;
+    width: 490px;
+    height: 250px;
     
-    top: 452px;
-    left: 14px;
+    top: 464px;
+    left: 13px;
 
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -616,8 +616,186 @@
 }
 
 
+/* LEFT LEG */
+.left-leg{
+    width: 300px;
+    height: 400px;
 
+    left: 490px;
+    top: 340px;
 
+    overflow: hidden;
+}
+.left-leg .upper-leg{
+    width: 230px;
+    height: 200px;
+
+    overflow: hidden;
+}
+.left-leg .upper-leg .inner-thigh{
+    background: #fff;
+    width: 400px;
+    height: 400px;
+
+    left: 1px;
+    top: 34px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.left-leg .upper-leg .thigh{
+    background: #000;
+    width: 480px;
+    height: 480px;
+
+    left: 10px;
+    top: 5px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.left-leg .hamstring{
+    background: #fff;
+
+    width: 160px;
+    height: 173px;
+
+    left: 91px;
+    top: 40px;
+
+    overflow: hidden;
+
+    -webkit-transform: rotate(17deg);
+    -moz-transform: rotate(17deg);
+    -ms-transform: rotate(17deg);
+    -o-transform: rotate(17deg);
+    transform: rotate(17deg);
+}
+.left-leg .hamstring .top{
+    background: #000;
+
+    width: 1260px;
+    height: 1261px;
+
+    top: -845px;
+    left: -1134px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.left-leg .lower-leg{
+    background: #000;
+    width: 155px;
+    height: 65px;
+
+    top: 170px;
+    left: 37px;
+
+    overflow: hidden;
+}
+.left-leg .lower-leg .shin{
+    background: #fff;
+    width: 130px;
+    height: 10px;
+
+    top: 62px;
+    left: 16px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.left-leg .lower-leg .calf{
+    background: #fff;
+    width: 900px;
+    height: 121px;
+
+    top: -82px;
+    left: 39px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+}
+.left-leg .knee{
+    background: #000;
+    width: 50px;
+    height: 55px;
+
+    left:13px;
+    top: 180px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.left-leg .heel{
+    background: #000;
+    width: 52px;
+    height: 35px;
+
+    left:160px;
+    top: 212px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.left-leg .foot{
+    background: #000;
+    width: 52px;
+    height: 86px;
+    left: 160px;
+    top: 232px;
+
+    overflow: hidden;
+}
+.left-leg .foot .top{
+    background: #fff;
+    width: 366px;
+    height: 92px;
+
+    left: -322px;
+    top: 55px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+.left-leg .foot .bottom{
+    background: #fff;
+    width: 156px;
+    height: 92px;
+
+    left: 15px;
+    top: -21px;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
 
 
 
