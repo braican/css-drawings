@@ -1,4 +1,4 @@
 CSS-Drawings
 ============
 
-A collection of drawings made entirely of CSS.
+A collection of drawings made entirely with CSS.
