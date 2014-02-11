@@ -232,10 +232,13 @@
     </div>
 
 </div>
+
+<div id="showit"><span>Show Velociunirapticorn</span></div>
     <script>
         // retrieve the element
         var vurn = document.getElementById("velociunirapticorn"),
-            button = document.getElementById("clickme");
+            button = document.getElementById("clickme"),
+            showit = document.getElementById("showit");
 
         vurn.addEventListener("webkitAnimationEnd", endOfAnimation, false);
         vurn.addEventListener("mozAnimationEnd", endOfAnimation, false);
@@ -244,13 +247,32 @@
         function endOfAnimation(e){
             console.log("go go velociunirapticorn");
             button.style.display = 'block';
+            showit.style.display = 'block';
         }
+
+        showit.addEventListener("click", function(e){
+            var className = "show-vurn";
+            if (vurn.classList) {
+              vurn.classList.toggle(className);
+            } else {
+              var classes = vurn.className.split(' ');
+              var existingIndex = classes.indexOf(className);
+
+              if (existingIndex >= 0)
+                classes.splice(existingIndex, 1);
+              else
+                classes.push(className);
+
+              vurn.className = classes.join(' ');
+            }
+        }, false);
 
         // reset the transition by...
         button.addEventListener("click", function(e){
           e.preventDefault;
 
           button.style.display = 'none';
+          showit.style.display = 'none';
           
           // -> removing the class
           vurn.classList.remove("animation");

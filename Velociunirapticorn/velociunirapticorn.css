@@ -1,21 +1,31 @@
 
+html,
+body{
+    height: 100%;
+}
 body{
     overflow: hidden;
     position: relative;
 }
 
-#clickme{
+#clickme,
+#showit{
     width: 100%;
     text-align: center;
     font-family: sans-serif;
     display: none;
 }
-#clickme span{
+#clickme span,
+#showit span{
     background: #000;
     color: #fff;
     cursor: pointer;
     padding: 20px;
     display: inline-block;
+}
+#showit{
+    position: absolute;
+    bottom: 0;
 }
 /* animate */
 @keyframes default {
@@ -39,6 +49,10 @@ body{
 #velociunirapticorn{
     position: absolute;
     right: 0%;
+}
+#velociunirapticorn.show-vurn{
+    right: auto;
+    left: 0;
 }
 #velociunirapticorn .vurn{
     position: absolute;
