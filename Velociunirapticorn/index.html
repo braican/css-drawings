@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<div id="clickme"><span>GO AGAIN</span></div>
 <div id="velociunirapticorn" class="animation">
     <!-- <img src="vurn.png" alt="" class="vurn"> -->
 
@@ -231,6 +232,38 @@
     </div>
 
 </div>
-    
+    <script>
+        // retrieve the element
+        var vurn = document.getElementById("velociunirapticorn"),
+            button = document.getElementById("clickme");
+
+        vurn.addEventListener("webkitAnimationEnd", endOfAnimation, false);
+        vurn.addEventListener("mozAnimationEnd", endOfAnimation, false);
+        vurn.addEventListener("animationEnd", endOfAnimation, false);
+
+        function endOfAnimation(e){
+            console.log("asdsads");
+            button.style.display = 'block';
+        }
+
+        // reset the transition by...
+        button.addEventListener("click", function(e){
+          e.preventDefault;
+
+          button.style.display = 'none';
+          
+          // -> removing the class
+          vurn.classList.remove("animation");
+          
+          // -> triggering reflow /* The actual magic */
+          // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+          vurn.offsetWidth = vurn.offsetWidth;
+          
+          // -> and re-adding the class
+          vurn.classList.add("animation");
+        }, false);
+
+        
+    </script>
 </body>
 </html>
