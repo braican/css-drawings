@@ -1,6 +1,30 @@
 
-#velociunirapticorn{
+body{
+    overflow: hidden;
     position: relative;
+}
+/* animate */
+@keyframes default {
+    100% { right:180%;}
+    50%{right:80%;}
+    0%{right:0%;}
+}
+
+@-webkit-keyframes default {
+    100% { right:180%;}
+    50%{right:80%;}
+    0%{right:0%;}
+}
+
+/* apply the .animation class to the element you want to animate */
+.animation {
+    animation: default 4s ease 2s infinite normal none;
+    -webkit-animation: default 4s ease 2s infinite normal none;
+}
+ /* veloci */
+#velociunirapticorn{
+    position: absolute;
+    right: 0%;
 }
 #velociunirapticorn .vurn{
     position: absolute;
@@ -207,8 +231,8 @@
 
 /* teeth */
 .tooth{
-    width: 14px;
-    height: 20px;
+    width: 16px;
+    height: 24px;
     overflow: hidden;
 }
 .tooth.bottom{
@@ -220,31 +244,31 @@
 }
 .tooth-1.bottom{
     left: 97px;
-    top: 120px;
+    top: 117px;
 }
 .tooth-2.bottom{
     left: 86px;
-    top: 128px;
+    top: 125px;
 }
 .tooth-3.bottom{
     left: 76px;
-    top: 134px;
+    top: 131px;
 }
 .tooth-4.bottom{
     left: 66px;
-    top: 142px;
+    top: 139px;
 }
 .tooth-5.bottom{
     left: 56px;
-    top: 147px;
+    top: 144px;
 }
 .tooth-6.bottom{
     left: 46px;
-    top: 155px;
+    top: 152px;
 }
 .tooth-7.bottom{
     left: 37px;
-    top: 162px;
+    top: 159px;
 }
 
 .tooth-1.top{
@@ -264,7 +288,7 @@
     top: 48px;
 }
 .tooth-5.top{
-    left:35px;
+    left:36px;
     top: 45px;
 }
 .tooth-6.top{
@@ -988,27 +1012,109 @@
     -o-transform: rotate(-10deg);
     transform: rotate(-10deg);
 }
+
+.right-leg .lower-leg{
+    width: 115px;
+    height: 113px;
+
+    left: 17px;
+    top: 40px;
+
+    overflow: hidden;
+}
 .right-leg .lower-leg .shin{
     background: #000;
-    width: 135px;
-    height: 61px;
+    width: 295px;
+    height: 76px;
 
-    left: -39px;
-    top: 53px;
-/*
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;*/
+    left: -117px;
+    top: -55px;
+
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
 
-    -webkit-transform: rotate(49deg);
-    -moz-transform: rotate(49deg);
-    -ms-transform: rotate(49deg);
-    -o-transform: rotate(49deg);
-    transform: rotate(49deg);
+    -webkit-transform: rotate(55deg);
+    -moz-transform: rotate(55deg);
+    -ms-transform: rotate(55deg);
+    -o-transform: rotate(55deg);
+    transform: rotate(55deg);
 }
 
+.right-leg .lower-leg .calf{
+    background: #fff;
+    width: 103px;
+    height: 73px;
+
+    left: 44px;
+    top: -17px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+
+    -webkit-transform: rotate(57deg);
+    -moz-transform: rotate(57deg);
+    -ms-transform: rotate(57deg);
+    -o-transform: rotate(57deg);
+    transform: rotate(57deg);
+}
+
+.right-leg .hoove{
+    width: 51px;
+    height: 42px;
+    top: 109px;
+    left: 131px;
+
+    overflow: hidden;
+}
+
+.right-leg .hoove .main{
+    background: #000;
+    
+    width: 182px;
+    height: 152px;
+    top: -113px;
+    left: -55px;
+
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.right-leg .hoove .shoe{
+    background: #fff;
+    
+    width: 62px;
+    height: 42px;
+    top: -19px;
+    left: 19px;
+    
+    -webkit-transform: rotate(57deg);
+    -moz-transform: rotate(57deg);
+    -ms-transform: rotate(57deg);
+    -o-transform: rotate(57deg);
+    transform: rotate(57deg);
+}
+
+.right-leg .hoove .inside{
+    background: #fff;
+    
+    width: 62px;
+    height: 42px;
+    top: -39px;
+    left: -13px;
+    
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
 
 
 
