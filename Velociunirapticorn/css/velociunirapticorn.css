@@ -8,61 +8,11 @@ body{
     position: relative;
 }
 
-#clickme,
-#showit{
-    width: 100%;
-    text-align: center;
-    font-family: sans-serif;
-    display: none;
-    position: relative;
-    z-index: 10000;
-}
-#clickme span,
-#showit span{
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-    padding: 20px;
-    display: inline-block;
-}
-#showit{
-    position: absolute;
-    bottom: 0;
-}
-/* animate */
-@keyframes default {
-    100% { right:180%;}
-    50%{right:80%;}
-    0%{right:0%;}
-}
-
-@-webkit-keyframes default {
-    100% { right:180%;}
-    50%{right:80%;}
-    0%{right:0%;}
-}
-
-/* apply the .animation class to the element you want to animate */
-.animation {
-    animation: default 4s ease 1s 1 normal none;
-    -webkit-animation: default 4s ease 1s 1 normal none;
-}
- /* veloci */
+/* veloci */
 #velociunirapticorn{
     position: absolute;
-    right: 0%;
 }
-#velociunirapticorn.show-vurn{
-    right: auto;
-    left: 0;
-}
-#velociunirapticorn .vurn{
-    position: absolute;
-    opacity: .2;
-    z-index: 1000;
-    left: -50px;
-    top: -40px;
-}
+
 #velociunirapticorn div{
     position: absolute;
 }
