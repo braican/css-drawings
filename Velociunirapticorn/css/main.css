@@ -45,4 +45,6 @@ button:active{
     display: inline-block;
     margin-right: 60px;
 }
-
+#toolbar div.actions{
+    display: none;
+}

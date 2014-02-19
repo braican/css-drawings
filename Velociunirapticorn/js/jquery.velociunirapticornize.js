@@ -99,9 +99,11 @@
             if($('.velociunirapticorn').length === 0){
                 $('body').append(vurnMarkup);
                 $('.' + options.showVurnTrigger).text("Hide Vurn");
+                $('#toolbar div.actions').css('display', 'inline-block');
             } else{
                 $('.velociunirapticorn').remove();
                 $('.' + options.showVurnTrigger).text("Show Vurn");
+                $('#toolbar div.actions').hide();
             }
         }
 
