@@ -28,10 +28,12 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'compressed'
+                    style: 'expanded'
                 },
                 files: {
-                    'Velociunirapticorn/css/build/main.css': 'css/main.scss'
+                    'Velociunirapticorn/css/build/velociunirapticorn.css': 'Velociunirapticorn/css/velociunirapticorn.scss',
+                    'Velociunirapticorn/css/build/main.css': 'Velociunirapticorn/css/main.scss',
+                    'Velociunirapticorn/css/build/animations.css': 'Velociunirapticorn/css/animations.scss'
                 }
             } 
         }

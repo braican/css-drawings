@@ -1,0 +1,534 @@
+
+// -----------------------------------
+// --variables
+// -----------------------------------
+$black: #000;
+$white: #fff;
+
+// -----------------------------------
+// --mixins
+// -----------------------------------
+
+// top, left, width, height
+@mixin position($t, $l, $w, $h){
+    top: $t;
+    left: $l;
+    width:$w;
+    height:$h;
+}
+
+// transform origin
+@mixin transform-origin($origin){
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+// transform
+@mixin transform($trf){
+    -webkit-transform: $trf;
+    -moz-transform: $trf;
+    -ms-transform: $trf;
+    -o-transform: $trf;
+    transform: $trf;
+}
+
+// border radius
+@mixin border-radius($radius: 100%){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// -----------------------------------
+// --main styles
+// -----------------------------------
+
+/* this is a coment */
+
+
+html,
+body{
+    height: 100%;
+    padding: 34px 0 0;
+    margin: 0;
+}
+
+body{
+    overflow: hidden;
+    position: relative;
+}
+
+.exposed-structure .velociunirapticorn div{
+    background-color: transparent !important;
+    overflow:visible;
+}
+
+.velociunirapticorn{
+    position: absolute;
+    div{
+        position: absolute;
+    }
+}
+
+// head
+.head{
+    @include position(252px, 66px, 200px, 200px);
+    @include transform-origin(100% 35px);
+
+    .eye{
+        @include position(16px, 130px, 0, 0);
+        @include transform(rotate(79deg));
+
+        border-top: 25px solid transparent;
+        border-left: 14px solid $white;
+        border-bottom: 7px solid transparent;
+    }
+    .snout{
+        @include position(8px, -2px, 0, 32px);
+        @include transform(skew(-40deg, 0));
+        @include border-radius(10px 0 0 40px);
+        border-right: 138px solid $black;
+        border-bottom: 23px solid transparent;
+    }
+    .dome-piece{
+        background: $black;
+        @include position(0, 100px, 76px, 70px);
+        @include border-radius();
+    }
+    .jaw{
+        background: $black;
+        @include position(13px, 90px, 108px, 125px);
+        @include border-radius();
+        @include transform(rotate(-37deg));
+    }
+    .inner-jaw{
+        background: $white;
+        @include position(56px, 9px, 123px, 63px);
+        @include border-radius();
+    }
+    .lower-jaw{
+        background: transparent;
+        @include position(128px, 19px, 0, 14px);
+        @include transform(rotate(-25deg) skew(30deg));
+        border-right: 148px solid $black;
+        border-top: 24px solid transparent;
+    }
+    .tongue{
+        background: $black;
+        @include position(85px, 98px, 70px, 24px);
+    }
+    .tongue-top{
+        background: $black;
+        @include position(81px, 72px, 103px, 67px);
+        @include border-radius();
+    }
+    .tongue-bottom{
+        background: $white;
+        @include position(108px, 58px, 115px, 67px);
+        @include border-radius();
+    }
+    .tongue-tip{
+        @include position(96px, 21px, 100px, 50px);
+        overflow: hidden;
+        & div{
+            @include border-radius();
+        }
+
+        .top{
+            background: $white;
+            @include position(-64px, -13px, 80px, 80px);
+        }
+        .bottom{
+            background: $black;
+            @include position(-44px, 2px, 70px, 70px);
+        }
+    }
+    .tooth{
+        width: 16px;
+        height: 24px;
+        overflow:hidden;
+        &.bottom{
+            @include transform(scaleY(-1));
+            
+            & > .tooth-top{
+                background: $white;
+                @include position(-20px, 0, 77px, 77px);
+            }
+        }
+        &.top{
+            & > .tooth-top{
+                background: $white;
+                @include position(-20px, 5px, 94px, 71px);
+            }
+        }
+        & > div{
+            @include border-radius();
+        }
+        & > .tooth-bottom{
+            background: $black;
+            @include position(-22px, 0, 55px, 55px);
+        }
+    }
+    @for $i from 1 through 7 {
+        .tooth-#{$i}.bottom {
+            left: 107px - ($i * 10);
+            top: 102px + ($i * 8);
+        }
+        .tooth-#{$i}.top{
+            left: 95px - ($i * 12);
+            top: 60px - ($i * 3);   
+        }
+    }
+    .tooth-8.top{
+        left: 2px;
+        top: 36px;
+    }
+}
+
+// neck
+.neck{
+    .gizzard{
+        background: $white;
+        @include position(284px, 144px, 130px, 130px);
+        @include border-radius();
+    }
+    .main-neck{
+        background: $black;
+        @include position(329px, 193px, 232px, 94px);
+        @include transform(rotate(45deg));
+    }
+    .neck-slope{
+        @include position(360px, 150px, 200px, 121px);
+        overflow:hidden;
+
+        .underneck{
+            background: $white;
+            @include position(-182px, -1027px, 1330px, 1330px);
+            @include border-radius();
+        }
+    }
+    .horn{
+        @include position(0, 180px, 140px, 290px);
+        overflow:hidden;
+        & > div{
+            @include border-radius();
+        }
+        .top{
+            background: $white;
+            @include position(-1262px, -3624px, 3700px, 3700px);
+        }
+        .bottom{
+            background: $black;
+            @include position(-443px, -1736px, 1840px, 1840px);
+        }
+    }
+    .spike{
+        width: 80px;
+        height: 90px;
+        overflow:hidden;
+        & > div{
+            @include border-radius();
+        }
+        .top{
+            background: $white;
+            @include position(-156px, -265px, 300px, 300px);
+        }
+        .bottom{
+            background: $black;
+            @include position(-79px, -255px, 300px, 300px);
+        }
+    }
+    .spike-1{
+        left: 240px;
+        top: 200px;
+    }
+    .spike-2{
+        left: 268px;
+        top: 220px;
+        @include transform(rotate(25deg));
+    }
+    .spike-3{
+        left: 289px;
+        top: 243px;
+        @include transform(rotate(36deg));
+    }
+    .spike-4{
+        left: 304px;
+        top: 266px;
+        @include transform(rotate(39deg));
+    }
+    .spike-5{
+        left: 332px;
+        top: 288px;
+        @include transform(rotate(47deg));
+    }
+    .spike-6{
+        left: 356px;
+        top: 312px;
+        @include transform(rotate(51deg));
+    }
+}
+
+.body{
+    .torso{
+        background: $black;
+        @include position(300px, 419px, 250px, 200px);
+        @include transform(rotate(-7deg));
+    }
+    .chest{
+        background: $black;
+        @include position(356px, 336px, 160px, 160px);
+        @include border-radius();
+    }
+    .back{
+        background: $white;
+        @include position(-445px, 92px, 2000px, 240px);
+        @include border-radius();
+        @include transform(rotate(-44deg));
+    }
+    .rump{
+        background: $black;
+        @include position(280px, 526px, 220px, 85px);
+        @include border-radius();
+    }
+}
+.tail{
+    @include position(-180px, 630px, 600px, 630px);
+    overflow:hidden;
+
+    .top{
+        background: $white;
+        @include position(-1000px, -731px, 1478px, 1460px);
+        @include border-radius();
+    }
+    .middle{
+        background: $black;
+        @include position(-889px, -720px, 1400px, 1400px);
+        @include border-radius();
+    }
+    .hindquarter{
+        background: $black;
+        @include position(482px, 69px, 139px, 37px);
+        @include transform(rotate(-29deg));
+    }
+    .bottom{
+        background: $white;
+        @include position(464px, 13px, 490px, 250px);
+        @include border-radius();
+        @include transform(rotate(-20deg));
+    }
+}
+
+.left-leg{
+    @include position(340px, 490px, 300px, 400px);
+    @include transform-origin(35% 10px);
+    overflow:hidden;
+
+    .upper-leg{
+        width: 230px;
+        height: 200px;
+        overflow:hidden;
+
+        .inner-thigh{
+            background: $white;
+            @include position(34px, 1px, 400px, 400px);
+            @include border-radius();
+        }
+        .thigh{
+            background: $black;
+            @include position(5px, 10px, 480px, 480px);
+            @include border-radius();
+        }
+        .hamstring{
+            @include position(40px, 91px, 160px, 173px);
+            @include transform(rotate(17deg));
+            background: $white;
+            overflow:hidden;
+
+            .top{
+                background: $black;
+                @include position(-845px, -1134px, 1260px, 1261px);
+                @include border-radius();
+            }
+        }
+    }
+
+    .lower-leg{
+        background: $black;
+        @include position(170px, 37px, 155px, 65px);
+        overflow:hidden;
+        & > div{
+            background: $white;
+            @include border-radius();
+        }
+        .shin{
+            @include position(62px, 16px, 130px, 10px);
+        }
+        .calf{
+            @include position(-82px, 39px, 900px, 121px);
+            @include transform(rotate(-4deg));
+        }
+    }
+
+    .knee{
+        background: $black;
+        @include position(180px, 13px, 50px, 55px);
+        @include border-radius();
+    }
+    .heel{
+        background: $black;
+        @include position(212px, 160px, 52px, 35px);
+        @include border-radius();
+    }
+    .foot{
+        background: $black;
+        @include position(232px, 160px, 52px, 86px);
+        overflow:hidden;
+
+        .top{
+            background: $white;
+            @include position(55px, -322px, 366px, 92px);
+            @include border-radius();
+            @include transform(rotate(-30deg));
+        }
+        .bottom{
+            background: $white;
+            @include position(-21px, 15px, 156px, 92px);
+            @include border-radius(50%);
+            @include transform(rotate(-58deg));
+        }
+    }
+
+    .claw-1{
+        @include position(279px, 105px, 72px, 112px);
+        overflow:hidden;
+
+        .knuckle{
+            background: $black;
+            @include position(1px, 29px, 44px, 48px);
+            @include border-radius(30px);
+        }
+        .talon-top{
+            background: $black;
+            @include position(13px, 5px, 100px, 100px);
+            @include border-radius();
+        }
+        .talon-bottom{
+            background: $white;
+            @include position(38px, 17px, 89px, 84px);
+            @include border-radius();   
+        }
+    }
+
+    .claw-2{
+        @include position(316px, 172px, 102px, 75px);
+        overflow:hidden;
+
+        .toe{
+            background: $black;
+            @include position(7px, 14px, 39px, 57px);
+            @include border-radius(0 20px 4px 45px);
+            @include transform(rotate(31deg));
+        }
+        .inner-toe{
+            background: $black;
+            @include position(0, 1px, 30px, 44px);
+        }
+        .under-toe{
+            background: $white;
+            @include position(3px, -4px, 20px, 87px);
+            @include border-radius();
+            @include transform(rotate(-4deg));
+        }
+        .talon{
+            @include position(30px, 30px, 70px, 50px);
+            overflow:hidden;
+            & > div{
+                @include border-radius();
+            }
+            .talon-top{
+                background: $black;
+                @include position(-64px, -20px, 98px, 98px);
+            }
+            .talon-bottom{
+                background: $white;
+                @include position(-64px, 10px, 87px, 87px);
+            }
+        }
+    }
+}
+
+.right-leg{
+    @include position(480px, 250px, 190px, 160px);
+    overflow:hidden;
+
+    .stomach{
+        background: $white;
+        @include position(-94px, 84px, 140px, 140px);
+        @include border-radius();
+    }
+    .upper-leg{
+        background: $black;
+        @include position(-9px, 15px, 205px, 61px);
+        @include border-radius();
+        @include transform(rotate(-12deg));
+    }
+    .thigh{
+        background: $white;
+        @include position(-47px, -49px, 345px, 61px);
+        @include border-radius();
+        @include transform(rotate(-10deg));   
+    }
+    .lower-leg{
+        @include position(40px, 17px, 115px, 113px);
+        overflow:hidden;
+
+        .shin{
+            background: $black;
+            @include position(-55px, -117px, 295px, 76px);
+            @include border-radius();
+            @include transform(rotate(55deg));
+        }
+
+        .calf{
+            background: $white;
+            @include position(-17px, 44px, 103px, 73px);
+            @include border-radius();
+            @include transform(rotate(57deg));
+        }
+    }
+    .hoove{
+        @include position(109px, 131px, 51px, 42px);
+        overflow:hidden;
+
+        .main{
+            background: $black;
+            @include position(-113px, -55px, 182px, 152px);
+            @include border-radius();
+        }
+        .shoe{
+            background: $white;
+            @include position(-19px, 19px, 62px, 42px);
+            @include transform(rotate(57deg));
+        }
+        .inside{
+            background: $white;
+            @include position(-39px, -13px, 62px, 42px);
+            @include border-radius();
+            @include transform(rotate(-45deg));
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
