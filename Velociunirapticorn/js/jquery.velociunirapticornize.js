@@ -8,40 +8,152 @@
     $.fn.velociunirapticornize = function(options){
 
         var defaults = {
-            trigger: 'click', // how the velociunirapticorn gets triggered
+            path: "inc/vurn.html",
+            showVurnTrigger: "show-vurn",
+            nodTrigger: "nod-head",
+            runAcrossTrigger: "engage",
+            moveLeftLegTrigger: "move-left-leg",
+            showStructureTrigger: "show-structure",
+            onload: false,
             delay: 5000
         }
 
         var options = $.extend(defaults, options);
 
-        return this.each(function(){
-            var $this = $(this);
-            var vurnMarkup;
+        var vurnMarkup;
 
+        //
+        // load up the velociunirapticorn
+        //
+        $.get(options.path, function(vurn) {
+            vurnMarkup = vurn;
 
-            function init(){
-                $.get('inc/vurn.html', function(vurn) {
-                    vurnMarkup = vurn;
-
-                    $('body').append(vurnMarkup);
-                }).error(function(e) {
-                    console.log("[error] : " + e.statusText);
-                });
+            if(options.onload){
+                addVurnToPage();
             }
+        }).error(function(e) {
+            console.log("[error] : " + e.statusText);
+        });
 
-            if(options.trigger == "onload"){
-                $(this).ready(function() {
-                    console.log("this");
-                    init();
-                });
-            } else if(options.trigger == "click"){
-                $this.on("click", function(e){
-                    e.preventDefault();
-                    init();
-                });
+        //
+        // event listeners if we're on load
+        //
+        function vurnEvents(){
+
+            // show/hide vurn on the page
+            $('.' + options.showVurnTrigger).on('click', function(event){
+                event.preventDefault();
+                event.stopPropagation();
+
+                addVurnToPage();
+            });
+
+            // make the thing nod
+            $('.' + options.nodTrigger).on('click', function(event){
+                event.preventDefault();
+                event.stopPropagation();
+
+                console.log("nod the head");
+                
+                $(this).toggleClass('active');
+                $('body').toggleClass('nod-head-animation');
+            });
+
+            // make vurn move his left leg
+            $('.' + options.moveLeftLegTrigger).on('click', function(event){
+                event.preventDefault();
+                event.stopPropagation();
+
+                console.log("move his left leg");
+
+                $(this).toggleClass('active');
+                $('body').toggleClass('move-left-leg-animation');
+            });
+
+            // make vurn run
+            $('.' + options.runAcrossTrigger).on('click', function(event){
+                event.preventDefault();
+                event.stopPropagation();
+                
+                console.log("run across the screen");
+                
+                runVurnRun();
+            });
+
+            // show vurn's structure
+            $('.' + options.showStructureTrigger).on('click', function(event){
+                event.preventDefault();
+                event.stopPropagation();
+
+                console.log("show the vurn structure");
+
+                showTheStructure();
+                
+            });
+        }
+
+        //
+        // add vurn to the page
+        //
+        function addVurnToPage(){
+            if($('.velociunirapticorn').length === 0){
+                $('body').append(vurnMarkup);
+                $('.' + options.showVurnTrigger).text("Hide Vurn");
+            } else{
+                $('.velociunirapticorn').remove();
+                $('.' + options.showVurnTrigger).text("Show Vurn");
+            }
+        }
+
+        //
+        // show the internal structure of the vurn
+        //
+        function showTheStructure(){
+            if($('body').hasClass('exposed-structure')){
+                $('body').removeClass('exposed-structure');
+                $('div', $('.velociunirapticorn')).removeAttr('style');
+                $('.' + options.showStructureTrigger).text('Show Structure');
             } else {
-                console.log("[error] : " + options.trigger + " is not a valid trigger");
+                $('body').addClass('exposed-structure');
+                $('div', $('.velociunirapticorn')).each(function(i, e){
+                    if($(e).children().length == 0){
+                        $(e).css({
+                            "border": "2px solid black"
+                        });
+                    }
+                });
+                $('.' + options.showStructureTrigger).text('Hide Structure');   
             }
+        }
+
+        //
+        // make vurn run
+        //
+        function runVurnRun(){
+            var vurn = $(vurnMarkup).appendTo('body').addClass('move-left-leg-animation').css({
+                "position":"fixed",
+                "bottom": "0",
+                "right" : "330px",
+                "display" : "block"
+            });
+
+            vurn.animate({
+                "bottom" : "770px"
+            }, function(){
+                var offset = (($(this).position().left)+1600);
+                $(this).delay(400).animate({
+                    "right": offset
+                }, 2200, function(){
+                    $(this).remove();
+                })
+            });
+        }
+
+        return this.each(function(){
+
+            var $t = $(this);
+
+            vurnEvents();
 
         }); // each instance
     } // plugin call

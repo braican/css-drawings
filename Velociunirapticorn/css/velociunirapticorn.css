@@ -2,18 +2,25 @@
 html,
 body{
     height: 100%;
+    padding: 34px 0 0 0;
+    margin: 0;
 }
 body{
     overflow: hidden;
     position: relative;
 }
 
+.exposed-structure .velociunirapticorn div{
+    background: transparent !important;
+    overflow: visible !important;
+}
+
 /* veloci */
-#velociunirapticorn{
+.velociunirapticorn{
     position: absolute;
 }
 
-#velociunirapticorn div{
+.velociunirapticorn div{
     position: absolute;
 }
 
@@ -21,6 +28,14 @@ body{
 .head{
     left: 66px;
     top: 252px;
+    width:200px;
+    height: 200px;
+
+    -webkit-transform-origin: 100% 35px;
+    -moz-transform-origin: 100% 35px;
+    -ms-transform-origin: 100% 35px;
+    -o-transform-origin: 100% 35px;
+    transform-origin: 100% 35px;
 }
 .eye{
     width: 0;
@@ -40,8 +55,6 @@ body{
     transform: rotate(79deg);
 }
 .snout{
-    background: transparent;
-    
     width: 0;
     height: 32px;
 
@@ -635,6 +648,12 @@ body{
     top: 340px;
 
     overflow: hidden;
+
+    -webkit-transform-origin: 35% 10px;
+    -moz-transform-origin: 35% 10px;
+    -ms-transform-origin: 35% 10px;
+    -o-transform-origin: 35% 10px;
+    transform-origin: 35% 10px;
 }
 .left-leg .upper-leg{
     width: 230px;

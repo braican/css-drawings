@@ -1,0 +1,48 @@
+
+button{
+    background: #ccc;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    font-size: 16px;
+
+    -webkit-box-shadow: 0 4px 0 #bbb;
+    -moz-box-shadow: 0 4px 0 #bbb;
+    box-shadow: 0 4px 0 #bbb;
+}
+button:hover{
+    top: 2px;
+    -webkit-box-shadow: 0 2px 0 #bbb;
+    -moz-box-shadow: 0 2px 0 #bbb;
+    box-shadow: 0 2px 0 #bbb;   
+}
+button:focus{
+    outline: none;
+}
+button.active,
+button:active{
+    top: 4px;
+    -webkit-box-shadow: 0 0px 0 #bbb;
+    -moz-box-shadow: 0 0px 0 #bbb;
+    box-shadow: 0 0px 0 #bbb;
+}
+
+#toolbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #efefef;
+    z-index: 1000;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+#toolbar div{
+    display: inline-block;
+    margin-right: 60px;
+}
+

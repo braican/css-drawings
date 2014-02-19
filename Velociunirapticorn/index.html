@@ -6,20 +6,33 @@
     
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/velociunirapticorn.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
+
 <body>
 
 <div id="toolbar">
-    <button id="show-vurn">Show Velociunirapticorn</button>
+    <div>
+        <button class="show-vurn">Show Vurn</button>
+        <button class="show-structure">Show Structure</button>
+    </div>
+
+    <div>
+        <button class="engage">Engage</button>
+    </div>
+
+    <div class="actions">
+        <span>Actions: </span>
+        <button class="nod-head">Nod Head</button>
+        <button class="move-left-leg">Move Left Leg</button>
+    </div>
+    
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/jquery.velociunirapticornize.js"></script>
 <script>
-    $('body').velociunirapticornize({
-        trigger: "onload"
-    })
-    $('#show-vurn').velociunirapticornize();
+    $('body').velociunirapticornize();
 </script>
 
 </body>
